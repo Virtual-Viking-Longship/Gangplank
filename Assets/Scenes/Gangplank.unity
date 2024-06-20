@@ -839,7 +839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 502125633}
   - component: {fileID: 502125634}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SnapInteractor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 519944384}
   - component: {fileID: 519944383}
   - component: {fileID: 519944382}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlankInsert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1422,7 +1422,9 @@ GameObject:
   - component: {fileID: 1073511317}
   - component: {fileID: 1073511319}
   - component: {fileID: 1073511318}
-  m_Layer: 0
+  - component: {fileID: 1073511320}
+  - component: {fileID: 1073511321}
+  m_Layer: 6
   m_Name: Plank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1442,7 +1444,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -1561,7 +1563,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!114 &1073511317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1623,7 +1625,7 @@ MonoBehaviour:
   _data: {fileID: 0}
   _pointableElement: {fileID: 1073511315}
   _rigidbody: {fileID: 1073511316}
-  _physicsGrabbable: {fileID: 0}
+  _physicsGrabbable: {fileID: 1073511321}
   _resetGrabOnGrabsUpdated: 0
   _scoringModifier:
     _positionRotationWeight: 0.8
@@ -1645,6 +1647,42 @@ MonoBehaviour:
   _movementProvider: {fileID: 0}
   _handAligment: 1
   _handGrabPoses: []
+--- !u!65 &1073511320
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073511309}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 55
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.0000038146973}
+--- !u!114 &1073511321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073511309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grabbable: {fileID: 1073511315}
+  _rigidbody: {fileID: 1073511316}
+  _scaleMassWithSize: 1
 --- !u!1 &1081910872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1823,7 +1861,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195447822}
   m_LocalRotation: {x: -0, y: -0.99999964, z: -0, w: 0.00085026014}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00005747378}
+  m_LocalPosition: {x: 0, y: 0, z: 0.025}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1831,7 +1869,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -179.903, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.06976744, y: 0}
+  m_AnchoredPosition: {x: -0.07, y: 0}
   m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1195447824
@@ -2378,7 +2416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1786557715}
   - component: {fileID: 1786557714}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SnapLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2430,7 +2468,7 @@ GameObject:
   - component: {fileID: 1809739706}
   - component: {fileID: 1809739705}
   - component: {fileID: 1809739704}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SnapLocationRigidBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2463,7 +2501,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!65 &1809739705
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2477,7 +2515,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 55
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -2494,8 +2532,8 @@ Transform:
   m_GameObject: {fileID: 1809739703}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.74, y: 1.31, z: 6}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0.681, y: 1.447, z: 6.259}
+  m_LocalScale: {x: 0.13148502, y: 0.17367938, z: 0.19042541}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1081910873}
