@@ -24,7 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BalanceMap:
-        m_Texture: {fileID: 2800000, guid: fe1a55e86f611fd46a71aeffffa1ad56, type: 3}
+        m_Texture: {fileID: 2800000, guid: 792f54d2907c6944990c1ee9a2cfd2eb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -149,7 +149,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: -0.85
+    - _Smoothness: -23.57
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
