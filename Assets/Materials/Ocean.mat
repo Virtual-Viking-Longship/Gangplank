@@ -108,8 +108,8 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FadeDist: 0.41
-    - _FoamSTR: 1.23
+    - _FadeDist: 1.01
+    - _FoamSTR: 4.32
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -140,12 +140,12 @@ Material:
     - _ZWrite: 1
     - _scale: 0.06
     - _test: 0.03
-    - _watermul: 35.48
+    - _watermul: 328.7
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorDark: {r: 0.05490197, g: 0.12314972, b: 0.39607844, a: 0}
-    - _ColorFoam: {r: 1, g: 1, b: 1, a: 0}
-    - _ColorLight: {r: 0.7012578, g: 0.8008386, b: 1, a: 0}
+    - _ColorDark: {r: 0.05490192, g: 0.12314967, b: 0.39607838, a: 1}
+    - _ColorFoam: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorLight: {r: 0.7012578, g: 0.8008386, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamScale: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _FoamSpeed: {r: 1, g: 1, b: 0, a: 0}
