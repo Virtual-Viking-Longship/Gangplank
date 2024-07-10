@@ -124,7 +124,7 @@ Material:
     - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SMOOTHNESS: 1
+    - _SMOOTHNESS: 0.24
     - _STR: 0.56
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -152,8 +152,8 @@ Material:
     - _Noise1Speed: {r: 0, g: -1, b: 0, a: 0}
     - _Noise2Speed: {r: -1, g: -1, b: 0, a: 0}
     - _Noise3Speed: {r: 0, g: 1, b: 0, a: 0}
-    - _WaterSpeed1: {r: 1, g: 1, b: 0, a: 0}
-    - _WaterSpeed2: {r: 1, g: 1, b: 0, a: 0}
+    - _WaterSpeed1: {r: 1, g: 10, b: 0, a: 0}
+    - _WaterSpeed2: {r: 1, g: 10, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4168565242243173400
 MonoBehaviour:
