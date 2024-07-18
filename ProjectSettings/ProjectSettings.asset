@@ -163,6 +163,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.DefaultCompany.Myproject
     Standalone: com.DefaultCompany.My-project
   buildNumber:
     Standalone: 0
@@ -742,7 +743,9 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: VUPLEX_STANDALONE;VUPLEX_XR_INTERACTION_TOOLKIT;VUPLEX_OCULUS;VUPLEX_OCULUS_PROJECT_CONFIG
+    Standalone: VUPLEX_STANDALONE;VUPLEX_XR_INTERACTION_TOOLKIT;VUPLEX_OCULUS;VUPLEX_OCULUS_PROJECT_CONFIG
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -850,7 +853,7 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 1
   windowsGamepadBackendHint: 0
   cloudProjectId: ca033411-331a-4b8c-99f8-8940670e640c
   framebufferDepthMemorylessMode: 0
