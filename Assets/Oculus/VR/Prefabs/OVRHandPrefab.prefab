@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 114925265787909616}
   - component: {fileID: 114252240061623322}
   - component: {fileID: 137619227449585070}
-  - component: {fileID: 717673852598504794}
   m_Layer: 0
   m_Name: OVRHandPrefab
   m_TagString: Untagged
@@ -112,8 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73eac66b128fc8749a21623225c34541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ovrMesh: {fileID: 0}
-  _ovrSkeleton: {fileID: 0}
+  _ovrMesh: {fileID: 114925265787909616}
+  _ovrSkeleton: {fileID: 114567484643301796}
   _confidenceBehavior: 1
   _systemGestureBehavior: 1
   _systemGestureMaterial: {fileID: 0}
@@ -170,15 +169,3 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_DirtyAABB: 0
---- !u!114 &717673852598504794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870938896605422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79b69103c6f904d3e8438d99dfe50ed0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

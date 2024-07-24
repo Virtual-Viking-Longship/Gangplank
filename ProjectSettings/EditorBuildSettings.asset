@@ -8,9 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Ship.unity
     guid: 027b6aa0c6c4e4784b897faad3f467e0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gangplank.unity
     guid: 1383697a15062434590133b4fcc62d87
+  - enabled: 0
+    path: Assets/Scenes/test-annotation.unity
+    guid: 77a6683068b1f47579be1fc4f294eca0
+  - enabled: 0
+    path: Assets/Oculus/Interaction/Samples/Scenes/Examples/RayExamples.unity
+    guid: 1b2d3f90c0f50b94cb910c66c773d00d
+  - enabled: 1
+    path: Assets/Scenes/infopanel-test.unity
+    guid: 14e19785b612e4e2080bfc252a673ee5
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 41e7424359b474a6a8e9bad0c5109667, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 980613ffc8a244d419d1ad520518fca1, type: 2}

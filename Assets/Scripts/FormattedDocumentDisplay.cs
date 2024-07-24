@@ -32,21 +32,26 @@ public class FormattedDocumentDisplay : MonoBehaviour
     }
 
     // This function is called by the ObjectInspector class
-    public void DisplayDocument(TextAsset document, string fileName)
+    public void DisplayDocument(TextAsset document)
     {
         foreach (Transform child in verticalLayout) Destroy(child.gameObject);
 
         string fileContents = document.text;
-        var regex = new System.Text.RegularExpressions.Regex(@"!\[(.*?)\]\((.*?)\)");
-        var matches = regex.Matches(fileContents);
-        var match = matches[0];
-        var imgPath = match.Groups[2].Value;        //extracts the actual image path from the regex match: the part in ()
-        int startIndex = match.Index;
-        int endIndex = match.Length + startIndex;
+        displayText(fileContents);
+        // var regex = new System.Text.RegularExpressions.Regex(@"!\[(.*?)\]\((.*?)\)");
+        // var matches = regex.Matches(fileContents);
+        // if (matches.Count > 0) {
+        //     var match = matches[0];
+        //     var imgPath = match.Groups[2].Value;        //extracts the actual image path from the regex match: the part in ()
+        //     int startIndex = match.Index;
+        //     int endIndex = match.Length + startIndex;
 
-        displayText(fileContents.Substring(0, startIndex));
-        DisplayImage(imgPath);
-        displayText(fileContents.Substring(endIndex));   
+        //     displayText(fileContents.Substring(0, startIndex));
+        //     DisplayImage(imgPath);
+        //     displayText(fileContents.Substring(endIndex));
+        // } else {
+        //     displayText(fileContents);
+        // }
     }
 
     private void displayText(string text) {

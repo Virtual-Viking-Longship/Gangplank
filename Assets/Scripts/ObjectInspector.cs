@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-// using UnityEngine.InputSystem;
-// using UnityEngine.XR.Interaction.Toolkit;
-// using UnityEngine.XR.Interaction.Toolkit.UI;
- 
+using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.UI;
+
 // using OculusSampleFramework;
 // using Oculus.Interaction;
 
@@ -18,8 +18,55 @@ This class is meant to be attacthed to the player
 */
 public class ObjectInspector : MonoBehaviour
 {
-//     [SerializeField] private InputActionReference leftInput = null, rightInput = null;
+    //     [SerializeField] private InputActionReference leftInput = null, rightInput = null;
     [SerializeField] private Transform infoPanel;
+    private Renderer objectRenderer;
+    private Color originalColor;
+    public Color highlightColor = Color.yellow;
+     void Start()
+    {
+        objectRenderer = GetComponent<Renderer>();
+        if (objectRenderer != null)
+        {
+            originalColor = objectRenderer.material.color;
+        }
+    }
+
+    public void OnSelectEnter()
+    {
+        // Debug.Log("plank inspector called");
+        Transform goal = gameObject.transform;
+        TextAsset document = Resources.Load<TextAsset>(goal.name);
+        if (document == null) return;
+
+        infoPanel.GetComponent<LazyFollow>().target = goal;
+        // infoPanel.transform.position = goal.position + Vector3.up * 0.1f;
+        infoPanel.GetComponent<CanvasGroup>().alpha = 1;
+        // infoPanel.GetComponent<CanvasGroup>().interactable = true;
+        // infoPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        // infoPanel.GetChild(0).GetChild(0).GetComponent<BoxCollider>().enabled = true;
+
+        if (objectRenderer != null)
+        {
+            objectRenderer.material.color = highlightColor;
+        }
+
+
+        
+
+        infoPanel.GetComponentInChildren<FormattedDocumentDisplay>().DisplayDocument(document);
+        
+
+        
+    }
+
+    public void OnSelectExit()
+    {
+        if (objectRenderer != null)
+        {
+            objectRenderer.material.color = originalColor;
+        }
+    }
 
     public void SendInfoPanel()
     {
@@ -28,14 +75,14 @@ public class ObjectInspector : MonoBehaviour
         TextAsset document = Resources.Load<TextAsset>(goal.name);
         if (document == null) return;
 
-        // infoPanel.GetComponent<LazyFollow>().target = goal;
+        //infoPanel.GetComponent<LazyFollow>().target = goal;
         infoPanel.transform.position = goal.position + Vector3.up * 0.1f;
         infoPanel.GetComponent<CanvasGroup>().alpha = 1;
         infoPanel.GetComponent<CanvasGroup>().interactable = true;
         infoPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
         infoPanel.GetChild(0).GetChild(0).GetComponent<BoxCollider>().enabled = true;
 
-        // infoPanel.GetComponentInChildren<FormattedDocumentDisplay>().DisplayDocument(document);
+        infoPanel.GetComponentInChildren<FormattedDocumentDisplay>().DisplayDocument(document);
     }
     // [SerializeField] private RayInteractor left, right;
 
