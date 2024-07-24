@@ -21,5 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/infopanel-test.unity
     guid: 14e19785b612e4e2080bfc252a673ee5
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 41e7424359b474a6a8e9bad0c5109667, type: 2}
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 9dd001b0fba8c4f899b021bc4bc1c058, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 980613ffc8a244d419d1ad520518fca1, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: f7f3b7a25ae2f4351822474ad14dfeaa, type: 2}
