@@ -5,17 +5,14 @@ using System.Collections.Generic;
 using LogicUI.FancyTextRendering;
 using TMPro;
 using Unity.VisualScripting;
-// using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.UI;
-// using Vuplex.WebView;
 using LogicUI.FancyTextRendering.MarkdownLogic;
 
 /*
 This class handles the display of the information of inspected objects
-It interprets a txt file and translates into a vertical layout
+It interprets a md file and translates into a vertical layout
 This class is expected to attached to a Info panel prefab, which has a vertical layout and templates for the elements that are spawned in it
-The info panel this class is attached to should also be a child of the player object
 */
 public class FormattedDocumentDisplay : MonoBehaviour
 {
@@ -34,24 +31,32 @@ public class FormattedDocumentDisplay : MonoBehaviour
     // This function is called by the ObjectInspector class
     public void DisplayDocument(TextAsset document)
     {
+        
         foreach (Transform child in verticalLayout) Destroy(child.gameObject);
-
+        
         string fileContents = document.text;
-        displayText(fileContents);
-        // var regex = new System.Text.RegularExpressions.Regex(@"!\[(.*?)\]\((.*?)\)");
-        // var matches = regex.Matches(fileContents);
-        // if (matches.Count > 0) {
-        //     var match = matches[0];
-        //     var imgPath = match.Groups[2].Value;        //extracts the actual image path from the regex match: the part in ()
-        //     int startIndex = match.Index;
-        //     int endIndex = match.Length + startIndex;
 
-        //     displayText(fileContents.Substring(0, startIndex));
-        //     DisplayImage(imgPath);
-        //     displayText(fileContents.Substring(endIndex));
-        // } else {
-        //     displayText(fileContents);
-        // }
+        //to fix formatting that makes .md look good in the git repo
+        fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"<\/?div(.*?)>\s*\n\s*", "");
+        fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"  ", "");
+
+        //finds the line with the image md
+        var regex = new System.Text.RegularExpressions.Regex(@"!\[(.*?)\]\((.*?)\)");
+        var matches = regex.Matches(fileContents);
+
+        //if there is an image
+        if (matches.Count > 0) {
+            var match = matches[0];
+            var imgPath = match.Groups[2].Value;        //extracts the actual image path from the regex match: the part in ()
+            int startIndex = match.Index;
+            int endIndex = match.Length + startIndex;
+
+            displayText(fileContents.Substring(0, startIndex));
+            DisplayImage(imgPath);
+            displayText(fileContents.Substring(endIndex));
+        } else {
+            displayText(fileContents);
+        }
     }
 
     private void displayText(string text) {
