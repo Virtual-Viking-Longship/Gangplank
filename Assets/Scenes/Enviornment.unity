@@ -176,7 +176,7 @@ MonoBehaviour:
   _data: {fileID: 0}
   _pointableElement: {fileID: 1073511315}
   _rigidbody: {fileID: 1073511316}
-  _physicsGrabbable: {fileID: 1073511321}
+  _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
     _positionRotationWeight: 0.8
@@ -680,8 +680,8 @@ ReflectionProbe:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IntensityMultiplier: 1
-  m_BlendDistance: 1
+  m_IntensityMultiplier: 1.1
+  m_BlendDistance: 8.83
   m_HDR: 1
   m_BoxProjection: 1
   m_RenderDynamicObjects: 1
@@ -2534,8 +2534,8 @@ Transform:
   m_GameObject: {fileID: 519944381}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.50945, y: 0.9228053, z: -1.6544409}
-  m_LocalScale: {x: 0.1, y: 0.03, z: 0.1}
+  m_LocalPosition: {x: -2.527, y: 0.9228053, z: -1.264}
+  m_LocalScale: {x: 0.1, y: 0.076623, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 72523413}
@@ -8302,7 +8302,6 @@ GameObject:
   - component: {fileID: 1073511315}
   - component: {fileID: 1073511317}
   - component: {fileID: 1073511320}
-  - component: {fileID: 1073511321}
   - component: {fileID: 1073511325}
   m_Layer: 6
   m_Name: Plank
@@ -8369,7 +8368,7 @@ MonoBehaviour:
   _twoGrabTransformer: {fileID: 0}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1073511316}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
 --- !u!54 &1073511316
@@ -8421,7 +8420,7 @@ MonoBehaviour:
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
-  _physicsGrabbable: {fileID: 1073511321}
+  _physicsGrabbable: {fileID: 0}
 --- !u!65 &1073511320
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8443,21 +8442,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7, y: 0.07, z: 0.28}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1073511321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073511309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pointable: {fileID: 1073511315}
-  _rigidbody: {fileID: 1073511316}
-  _scaleMassWithSize: 1
 --- !u!114 &1073511325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24231,7 +24215,7 @@ MonoBehaviour:
   _data: {fileID: 0}
   _pointableElement: {fileID: 1073511315}
   _rigidbody: {fileID: 1073511316}
-  _physicsGrabbable: {fileID: 1073511321}
+  _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
     _positionRotationWeight: 0.8
