@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Ship.unity
     guid: 027b6aa0c6c4e4784b897faad3f467e0
   - enabled: 1
-    path: Assets/Scenes/Gangplank.unity
+    path: Assets/Scenes/Enviornment.unity
     guid: 1383697a15062434590133b4fcc62d87
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 41e7424359b474a6a8e9bad0c5109667, type: 2}
