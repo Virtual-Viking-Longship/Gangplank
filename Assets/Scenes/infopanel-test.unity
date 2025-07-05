@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028301, g: 0.22571309, b: 0.30692127, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 279391983}
   - component: {fileID: 279391982}
   m_Layer: 0
-  m_Name: cube
+  m_Name: +++++
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -474,8 +474,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9bb33a0da3b439ba0f2ddfdbf95a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoPanel: {fileID: 920811976}
+  infoPanel: {fileID: 2057093626}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  outline: {fileID: 0}
 --- !u!114 &279391982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -888,11 +889,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1648323769}
   m_SourcePrefab: {fileID: 100100000, guid: ffe3be6b11cb93446bff4c254b6d9148, type: 3}
---- !u!224 &920811976 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8843508350452156475, guid: ecfc0e7f7edf5c24bbb20b7856f5fdd0, type: 3}
-  m_PrefabInstance: {fileID: 2057093623}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1054584304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,7 +1527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6985478378111158122, guid: ecfc0e7f7edf5c24bbb20b7856f5fdd0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00061035156
+      value: 0.00062561035
       objectReference: {fileID: 0}
     - target: {fileID: 7685163417302894242, guid: ecfc0e7f7edf5c24bbb20b7856f5fdd0, type: 3}
       propertyPath: m_IsActive
@@ -1692,6 +1688,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!224 &2057093626 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8843508350452156475, guid: ecfc0e7f7edf5c24bbb20b7856f5fdd0, type: 3}
+  m_PrefabInstance: {fileID: 2057093623}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2141462986
 PrefabInstance:
   m_ObjectHideFlags: 0
