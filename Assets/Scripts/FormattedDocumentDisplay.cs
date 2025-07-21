@@ -40,11 +40,12 @@ public class FormattedDocumentDisplay : MonoBehaviour
         fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"<\/?div(.*?)>\s*\n\s*", "");
         fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"  ", "");
 
-        //finds the line with the image md
+        //finds the line with the image file information
         var regex = new System.Text.RegularExpressions.Regex(@"!\[(.*?)\]\((.*?)\)");
         var matches = regex.Matches(fileContents);
 
         //if there is an image
+        //needs to be modified to a loop if there will be more than one image
         if (matches.Count > 0) {
             var match = matches[0];
             var imgPath = match.Groups[2].Value;        //extracts the actual image path from the regex match: the part in ()

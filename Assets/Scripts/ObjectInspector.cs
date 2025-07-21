@@ -59,8 +59,8 @@ public class ObjectInspector : MonoBehaviour
         infoPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
         infoPanel.GetComponent<CanvasGroup>().interactable = true;
         //is there a better way to do this?
-        infoPanel.GetChild(0).GetChild(0).GetComponent<BoxCollider>().enabled = true;        //for old info panel structure
-        // infoPanel.GetChild(1).GetComponent<BoxCollider>().enabled = true;                       //for new info panel structure
+        // infoPanel.GetChild(0).GetChild(0).GetComponent<BoxCollider>().enabled = true;        //for old info panel structure
+        infoPanel.GetChild(1).GetComponent<BoxCollider>().enabled = true;                       //for new info panel structure
 
         infoPanel.GetComponentInChildren<FormattedDocumentDisplay>().DisplayDocument(document);
 
@@ -70,4 +70,3 @@ public class ObjectInspector : MonoBehaviour
         infoPanel.transform.forward *= -1;
     }
 }
-
