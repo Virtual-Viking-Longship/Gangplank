@@ -2799,7 +2799,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 343278728282193102, guid: d00356c4931664d9b8406df64c05413f, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 956759991711501497, guid: d00356c4931664d9b8406df64c05413f, type: 3}
       propertyPath: m_Name
@@ -2815,7 +2815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582969586030473456, guid: d00356c4931664d9b8406df64c05413f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2366976405367283257, guid: d00356c4931664d9b8406df64c05413f, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2893,9 +2893,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1437243717}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 956759991711501497, guid: d00356c4931664d9b8406df64c05413f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 442875363}
     - targetCorrespondingSourceObject: {fileID: 9079251398551492662, guid: d00356c4931664d9b8406df64c05413f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 442875361}
@@ -2969,38 +2966,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &442875362 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 956759991711501497, guid: d00356c4931664d9b8406df64c05413f, type: 3}
-  m_PrefabInstance: {fileID: 442875357}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &442875363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442875362}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a2d7d89889b4d94fa1f8d6fe49788e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 0}
-  m_TargetOffset: {x: 0, y: 0, z: 0.5}
-  m_FollowInLocalSpace: 0
-  m_ApplyTargetInLocalSpace: 0
-  m_MovementSpeed: 6
-  m_MovementSpeedVariancePercentage: 0.25
-  m_SnapOnEnable: 1
-  m_PositionFollowMode: 1
-  m_MinDistanceAllowed: 0.01
-  m_MaxDistanceAllowed: 0.3
-  m_TimeUntilThresholdReachesMaxDistance: 3
-  m_RotationFollowMode: 1
-  m_MinAngleAllowed: 0.1
-  m_MaxAngleAllowed: 5
-  m_TimeUntilThresholdReachesMaxAngle: 3
 --- !u!224 &442875365 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6073330378148227591, guid: d00356c4931664d9b8406df64c05413f, type: 3}
@@ -11270,7 +11235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14f573f32bff9540b9ddc6538ea3c53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hand: {fileID: 0}
 --- !u!4 &1114040581 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 482130, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
@@ -28435,7 +28399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1874652202
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28498,7 +28462,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1874652205
 Canvas:
   m_ObjectHideFlags: 0
