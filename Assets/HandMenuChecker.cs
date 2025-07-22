@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class HandMenuChecker : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public OVRHand Hand;
+    
     // Update is called once per frame
     void Update()
     {
-        
+        if (Hand.IsSystemGestureInProgress)
+        {
+            GameObject Menu = GameObject.FindWithTag("Menu");
+            Menu.active = true;
+
+        }
     }
 }
