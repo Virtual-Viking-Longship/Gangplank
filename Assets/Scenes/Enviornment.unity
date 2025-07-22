@@ -11319,50 +11319,6 @@ Transform:
   - {fileID: 2012538904}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -0.787, z: 0}
---- !u!1 &1089454021 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4522355876018893832, guid: 5986d0051398cdb4fa684b73621e5ed2, type: 3}
-  m_PrefabInstance: {fileID: 4438995279110408337}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1089454027
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1089454021}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
---- !u!114 &1089454028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1089454021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49d3bbd18ed10f44ba1e0b24dbfee754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _canvasRenderTexture: {fileID: 0}
-  _meshRenderer: {fileID: 0}
-  _renderingMode: 1
-  _useAlphaToMask: 1
-  _alphaCutoutThreshold: 0.5
 --- !u!4 &1106817166 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 599975513303440536, guid: ea16c3c8c1688234fa81a4f39339bf1b, type: 3}
@@ -49625,6 +49581,10 @@ PrefabInstance:
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 970450437}
+    - target: {fileID: 5262071828216544678, guid: 5986d0051398cdb4fa684b73621e5ed2, type: 3}
+      propertyPath: _forwardElement
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5864731594151081088, guid: 5986d0051398cdb4fa684b73621e5ed2, type: 3}
       propertyPath: _whenEndHighlight.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -49751,15 +49711,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4350893941933370613, guid: 5986d0051398cdb4fa684b73621e5ed2, type: 3}
+    - {fileID: 5864731594151081092, guid: 5986d0051398cdb4fa684b73621e5ed2, type: 3}
+    - {fileID: 5262071828216544678, guid: 5986d0051398cdb4fa684b73621e5ed2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4522355876018893832, guid: 5986d0051398cdb4fa684b73621e5ed2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1089454028}
-    - targetCorrespondingSourceObject: {fileID: 4522355876018893832, guid: 5986d0051398cdb4fa684b73621e5ed2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1089454027}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5986d0051398cdb4fa684b73621e5ed2, type: 3}
 --- !u!23 &4440383010359005460
 MeshRenderer:
