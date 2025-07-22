@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/infopanel-test.unity
     guid: 14e19785b612e4e2080bfc252a673ee5
+  - enabled: 0
+    path: Assets/Scenes/PokeExamples.unity
+    guid: ada3086bde0ab18459589e22d8d9e182
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 9dd001b0fba8c4f899b021bc4bc1c058, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 980613ffc8a244d419d1ad520518fca1, type: 2}
