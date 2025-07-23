@@ -142,6 +142,9 @@ PlayerSettings:
   bundleVersion: 0.1
   preloadedAssets:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 8df7d48d4b75b48df9010b98efbb140e, type: 2}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -161,7 +164,9 @@ PlayerSettings:
   resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Android: com.DefaultCompany.Myproject
+    Standalone: com.DefaultCompany.My-project
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -740,7 +745,9 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: 
+    Standalone: VUPLEX_STANDALONE;VUPLEX_XR_INTERACTION_TOOLKIT;VUPLEX_OCULUS;VUPLEX_OCULUS_PROJECT_CONFIG
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -848,7 +855,7 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 1
   windowsGamepadBackendHint: 0
   cloudProjectId: ca033411-331a-4b8c-99f8-8940670e640c
   framebufferDepthMemorylessMode: 0
