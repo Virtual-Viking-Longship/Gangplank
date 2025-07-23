@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit.UI;
 
 public class MenuManager : MonoBehaviour
 {
     public Transform head;
+    public Transform hand;
     public GameObject menu;
     public InputActionProperty showButton;
     public float spawnDistance = 1;
@@ -13,8 +15,8 @@ public class MenuManager : MonoBehaviour
     public void Show()
     {
         menu.SetActive(!menu.activeSelf);
-
-        menu.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * spawnDistance;
+        menu.GetComponent<LazyFollow>().enabled = (!menu.GetComponent<LazyFollow>().enabled);
+        menu.transform.position = hand.transform.position;
     }
 
     // Update is called once per frame
