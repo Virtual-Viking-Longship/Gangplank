@@ -13,7 +13,7 @@ This class makes the player able to inspect objects
 Inspection happens when the player is hovering an object with either right or left ray interactors and pressing the trigger
 This class is meant to be attacthed to the player
 */
-public class ObjectInspector : MonoBehaviour
+public class ObjectInspector_OLD : MonoBehaviour
 {
     [SerializeField] private InputActionReference leftInput = null, rightInput = null;
     [SerializeField] private Transform infoPanel;
