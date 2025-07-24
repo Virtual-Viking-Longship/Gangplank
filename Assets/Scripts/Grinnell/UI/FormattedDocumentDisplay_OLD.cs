@@ -14,7 +14,7 @@ It interprets a txt file and translates into a vertical layout
 This class is expected to attached to a Info panel prefab, which has a vertical layout and templates for the elements that are spawned in it
 The info panel this class is attached to should also be a child of the player object
 */
-public class FormattedDocumentDisplay : MonoBehaviour
+public class FormattedDocumentDisplay_OLD : MonoBehaviour
 {
     public WebBrowserButtons webBrowserButtons;
     private GameObject imageBlock, textBlock, linkBlock, audioPlayerBlock;
