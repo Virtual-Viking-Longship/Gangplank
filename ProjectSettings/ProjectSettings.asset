@@ -746,7 +746,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: 
+    Android: VUPLEX_OCULUS_PROJECT_CONFIG;VUPLEX_XR_INTERACTION_TOOLKIT;VUPLEX_OCULUS
     Standalone: VUPLEX_STANDALONE;VUPLEX_XR_INTERACTION_TOOLKIT;VUPLEX_OCULUS;VUPLEX_OCULUS_PROJECT_CONFIG
   additionalCompilerArguments: {}
   platformArchitecture: {}
