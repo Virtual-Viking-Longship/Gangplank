@@ -18,14 +18,15 @@ public class FormattedDocumentDisplay : MonoBehaviour
 {
     // public WebBrowserButtons webBrowserButtons;
     private GameObject imageBlock, textBlock, linkBlock, audioPlayerBlock;
-    private Transform verticalLayout;
+    public Transform verticalLayout;
+    public RectTransform Hierarchy;
+    public Transform Title;
     void Start()
     {
         imageBlock = transform.GetChild(0).gameObject;
         textBlock = transform.GetChild(1).gameObject;
         linkBlock = transform.GetChild(2).gameObject;
         audioPlayerBlock = transform.GetChild(3).gameObject;
-        verticalLayout = transform.GetChild(4);
     }
 
     // This function is called by the ObjectInspector class
@@ -58,6 +59,7 @@ public class FormattedDocumentDisplay : MonoBehaviour
         } else {
             displayText(fileContents);
         }
+        Hierarchy.anchoredPosition = new Vector2(Hierarchy.anchoredPosition.x, -1000);
     }
 
     private void displayText(string text) {
