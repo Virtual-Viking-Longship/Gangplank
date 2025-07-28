@@ -17,15 +17,17 @@ This class is expected to attached to a Info panel prefab, which has a vertical 
 public class FormattedDocumentDisplay : MonoBehaviour
 {
     // public WebBrowserButtons webBrowserButtons;
-    private GameObject imageBlock, textBlock, linkBlock, audioPlayerBlock;
-    private Transform verticalLayout;
+    private GameObject imageBlock, textBlock, linkBlock, audioPlayerBlock, titleBlock;
+    public Transform verticalLayout;
+    public RectTransform Hierarchy;
+    public Transform Title;
     void Start()
     {
         imageBlock = transform.GetChild(0).gameObject;
         textBlock = transform.GetChild(1).gameObject;
         linkBlock = transform.GetChild(2).gameObject;
         audioPlayerBlock = transform.GetChild(3).gameObject;
-        verticalLayout = transform.GetChild(4);
+        titleBlock = transform.GetChild(4).gameObject;
     }
 
     // This function is called by the ObjectInspector class
@@ -33,7 +35,8 @@ public class FormattedDocumentDisplay : MonoBehaviour
     {
         
         foreach (Transform child in verticalLayout) Destroy(child.gameObject);
-        
+        foreach (Transform child in Title) Destroy(child.gameObject);
+
         string fileContents = document.text;
 
         //to fix formatting that makes .md look good in the git repo
@@ -58,6 +61,15 @@ public class FormattedDocumentDisplay : MonoBehaviour
         } else {
             displayText(fileContents);
         }
+        TextMeshProUGUI block = Instantiate(titleBlock, Title).GetComponent<TextMeshProUGUI>(); //additional step for formatting the title
+        block.gameObject.SetActive(true);
+        var markdownRenderer = block.GetComponent<MarkdownRenderer>();
+        string tempstring = document.name[0].ToString();
+        tempstring = tempstring.ToUpper();
+        string doc = document.name.Remove(0, 1);
+        doc = doc.Insert(0, tempstring);
+        markdownRenderer.Source = doc;
+        StartCoroutine(position()); //reposition layout for proper scroll
     }
 
     private void displayText(string text) {
@@ -65,6 +77,15 @@ public class FormattedDocumentDisplay : MonoBehaviour
         block.gameObject.SetActive(true);
         var markdownRenderer = block.GetComponent<MarkdownRenderer>();
         markdownRenderer.Source = text;
+    }
+    private IEnumerator position()
+    {
+        yield return null;
+        yield return null;
+        Hierarchy.anchorMin = new Vector2(0, 1); //set anchor preset in order to start scroll at the top
+        Hierarchy.anchorMax = new Vector2(1, 1);
+        Hierarchy.pivot = new Vector2(0.5f, 0.5f);
+        Hierarchy.anchoredPosition = new Vector2(Hierarchy.anchoredPosition.x, -(Hierarchy.sizeDelta.y)/2);
     }
 
     public void DisplayImage(String imgPath)

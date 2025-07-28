@@ -8,44 +8,29 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.UI;
 
 /*
-This class makes the player able to inspect objects
-Inspection happens when the player is hovering an object with either right or left ray interactors and pressing the trigger
-This class is meant to be attacthed to the player
+This class is added to an object as a component.
 */
 public class ObjectInspector : MonoBehaviour
 {
-    [SerializeField] private Transform infoPanel;
-    private Renderer objectRenderer;
-    private Color originalColor;
+    [SerializeField] private GameObject infoPanel;
     public Color highlightColor = Color.yellow;
     public Outline outline;
 
     private void Start()
     {
-        objectRenderer = GetComponent<Renderer>();
-
-        if (objectRenderer != null)
-        {
-            originalColor = objectRenderer.material.color;
-        }
+        Transform goal = gameObject.transform;
+        TextAsset document = Resources.Load<TextAsset>(goal.name);
+        infoPanel.GetComponentInChildren<FormattedDocumentDisplay>().DisplayDocument(document);
     }
 
     public void OnSelectEnter()
     {
         outline.enabled = true;
-        if (objectRenderer != null)
-        {
-            objectRenderer.material.color = highlightColor;
-        }
     }
 
     public void OnSelectExit()
     {
         outline.enabled = false;
-        if (objectRenderer != null)
-        {
-            objectRenderer.material.color = originalColor;
-        }
     }
 
     public void SendInfoPanel()
@@ -58,14 +43,15 @@ public class ObjectInspector : MonoBehaviour
         infoPanel.GetComponent<CanvasGroup>().alpha = 1;
         infoPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
         infoPanel.GetComponent<CanvasGroup>().interactable = true;
+        infoPanel.SetActive(true);
         //is there a better way to do this?
         // infoPanel.GetChild(0).GetChild(0).GetComponent<BoxCollider>().enabled = true;        //for old info panel structure
-        infoPanel.GetChild(1).GetComponent<BoxCollider>().enabled = true;                       //for new info panel structure
+        //infoPanel.GetChild(1).GetComponent<BoxCollider>().enabled = true;                       //for new info panel structure
 
         infoPanel.GetComponentInChildren<FormattedDocumentDisplay>().DisplayDocument(document);
 
         Transform follow = GameObject.FindWithTag("MainCamera").transform;
-        infoPanel.transform.position = follow.position + new Vector3(follow.forward.x, 0, follow.forward.z).normalized * 0.65f;
+        infoPanel.transform.position = follow.position + new Vector3(follow.forward.x, 0, follow.forward.z).normalized * 0.5f;
         infoPanel.transform.LookAt(new Vector3(follow.position.x, infoPanel.transform.position.y, follow.position.z));
         infoPanel.transform.forward *= -1;
     }

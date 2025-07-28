@@ -22,6 +22,11 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 offset = hand.rotation * new Vector3(0.055f, 0, 0);
+        Vector3 palm = new Vector3((hand.position.x), hand.position.y, hand.position.z) + offset;
+        float dist = Vector3.Distance(palm, head.position)/5;
+        Vector3 vmenu = Vector3.MoveTowards(palm, head.position, dist);
+        menu.transform.position = vmenu;
         menu.transform.LookAt(new Vector3(head.position.x, head.position.y, head.position.z));
         menu.transform.forward *= -1;
     }
