@@ -4,6 +4,8 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
+using Oculus.Interaction;
+
 
 /*
 This is a class for a placeable object, which can be told to translate to a certain position and rotation
@@ -15,26 +17,18 @@ public class Placeable : MonoBehaviour
 {
     public bool onPlayerHand = false;
     public UnityEvent onPlace;
-    private Coroutine translateCoroutine = null;
-    private Vector3 originalPos;
-    private Quaternion originalRot;
-    private XRGrabInteractable xrInteractable;
-    private UnityAction<SelectEnterEventArgs> onPickUpAction;
-    private UnityAction<SelectExitEventArgs> onReleaseAction;
+    public Coroutine translateCoroutine = null;
+    public Vector3 originalPos;
+    public Quaternion originalRot;
+    public DistanceGrabInteractable xrInteractable;
+
 
     void Start()
     {
         originalPos = transform.position;
         originalRot = transform.rotation;
 
-        xrInteractable = GetComponent<XRGrabInteractable>();
-        
-        onPickUpAction += OnPlayerPickUp;
-        xrInteractable.selectEntered.AddListener(onPickUpAction);
-
-        onReleaseAction += OnPlayerRelease;
-        xrInteractable.selectExited.AddListener(onReleaseAction);
-
+        xrInteractable = GetComponentInChildren<DistanceGrabInteractable>();
     }
 
     // This is meant to reset the position when the piece falls out of some bounds
@@ -43,8 +37,8 @@ public class Placeable : MonoBehaviour
         if (collision.gameObject.tag == "Floor") TranslateToStart(2f);
     }
 
-    public void OnPlayerPickUp(SelectEnterEventArgs args) { onPlayerHand = true; }
-    public void OnPlayerRelease(SelectExitEventArgs args) { onPlayerHand = false; }
+    public void OnPlayerPickUp() { onPlayerHand = true; }
+    public void OnPlayerRelease() { onPlayerHand = false; }
 
     public void TranslateToFinalTarget(Transform target, float translateTime)
     {
@@ -62,7 +56,7 @@ public class Placeable : MonoBehaviour
         Vector3 startPos = transform.position;
         Quaternion startRot = transform.rotation;
 
-        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponentInParent<Rigidbody>().isKinematic = true;
         float time = 0;
         while(time < translateTime)
         {
@@ -78,7 +72,7 @@ public class Placeable : MonoBehaviour
             Destroy(gameObject);
         }
 
-        GetComponent<Rigidbody>().isKinematic = false;
+        GetComponentInParent<Rigidbody>().isKinematic = false;
         xrInteractable.enabled = true;
         translateCoroutine = null;
     }
