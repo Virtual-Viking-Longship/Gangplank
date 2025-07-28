@@ -8,7 +8,7 @@
 
 <div align="center">
   
-  ![Mast from Tjängvide](../images/Mast*Tjängvide.jpg)  
+  ![Mast from Tjängvide](../images/Mast_Tjängvide.jpg)  
   Carving of a mast on a picture stone from Tjängvide, Alskog Parish, Gotland (Berig, CC BY-SA 4.0, via Wikimedia Commons)
 
 </div>

@@ -13,14 +13,11 @@ This class is added to an object as a component.
 public class ObjectInspector : MonoBehaviour
 {
     [SerializeField] private Transform infoPanel;
-    private Renderer objectRenderer;
-    private Color originalColor;
     public Color highlightColor = Color.yellow;
     public Outline outline;
 
     private void Start()
     {
-        objectRenderer = GetComponent<Renderer>();
         Transform goal = gameObject.transform;
         TextAsset document = Resources.Load<TextAsset>(goal.name);
         infoPanel.GetComponentInChildren<FormattedDocumentDisplay>().DisplayDocument(document);
@@ -43,9 +40,9 @@ public class ObjectInspector : MonoBehaviour
         TextAsset document = Resources.Load<TextAsset>(goal.name);
         if (document == null) return;
 
-        //infoPanel.GetComponent<CanvasGroup>().alpha = 1;
-        //infoPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
-        //infoPanel.GetComponent<CanvasGroup>().interactable = true;
+        infoPanel.GetComponent<CanvasGroup>().alpha = 1;
+        infoPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        infoPanel.GetComponent<CanvasGroup>().interactable = true;
         //is there a better way to do this?
         // infoPanel.GetChild(0).GetChild(0).GetComponent<BoxCollider>().enabled = true;        //for old info panel structure
         //infoPanel.GetChild(1).GetComponent<BoxCollider>().enabled = true;                       //for new info panel structure
@@ -53,7 +50,7 @@ public class ObjectInspector : MonoBehaviour
         infoPanel.GetComponentInChildren<FormattedDocumentDisplay>().DisplayDocument(document);
 
         Transform follow = GameObject.FindWithTag("MainCamera").transform;
-        infoPanel.transform.position = follow.position + new Vector3(follow.forward.x, 0, follow.forward.z).normalized * 0.4f;
+        infoPanel.transform.position = follow.position + new Vector3(follow.forward.x, 0, follow.forward.z).normalized * 0.5f;
         infoPanel.transform.LookAt(new Vector3(follow.position.x, infoPanel.transform.position.y, follow.position.z));
         infoPanel.transform.forward *= -1;
     }

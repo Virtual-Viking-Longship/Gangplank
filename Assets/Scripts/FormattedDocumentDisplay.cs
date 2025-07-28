@@ -17,7 +17,7 @@ This class is expected to attached to a Info panel prefab, which has a vertical 
 public class FormattedDocumentDisplay : MonoBehaviour
 {
     // public WebBrowserButtons webBrowserButtons;
-    private GameObject imageBlock, textBlock, linkBlock, audioPlayerBlock;
+    private GameObject imageBlock, textBlock, linkBlock, audioPlayerBlock, titleBlock;
     public Transform verticalLayout;
     public RectTransform Hierarchy;
     public Transform Title;
@@ -27,6 +27,7 @@ public class FormattedDocumentDisplay : MonoBehaviour
         textBlock = transform.GetChild(1).gameObject;
         linkBlock = transform.GetChild(2).gameObject;
         audioPlayerBlock = transform.GetChild(3).gameObject;
+        titleBlock = transform.GetChild(4).gameObject;
     }
 
     // This function is called by the ObjectInspector class
@@ -59,7 +60,15 @@ public class FormattedDocumentDisplay : MonoBehaviour
         } else {
             displayText(fileContents);
         }
-        Hierarchy.anchoredPosition = new Vector2(Hierarchy.anchoredPosition.x, -1000);
+        TextMeshProUGUI block = Instantiate(titleBlock, Title).GetComponent<TextMeshProUGUI>(); //additional step for formatting the title
+        block.gameObject.SetActive(true);
+        var markdownRenderer = block.GetComponent<MarkdownRenderer>();
+        string tempstring = document.name[0].ToString();
+        tempstring = tempstring.ToUpper();
+        string doc = document.name.Remove(0, 1);
+        doc = doc.Insert(0, tempstring);
+        markdownRenderer.Source = doc;
+        StartCoroutine(position()); //reposition layout for proper scroll
     }
 
     private void displayText(string text) {
@@ -67,6 +76,15 @@ public class FormattedDocumentDisplay : MonoBehaviour
         block.gameObject.SetActive(true);
         var markdownRenderer = block.GetComponent<MarkdownRenderer>();
         markdownRenderer.Source = text;
+    }
+    private IEnumerator position()
+    {
+        yield return null;
+        yield return null;
+        Hierarchy.anchorMin = new Vector2(0, 1); //set anchor preset in order to start scroll at the top
+        Hierarchy.anchorMax = new Vector2(1, 1);
+        Hierarchy.pivot = new Vector2(0.5f, 0.5f);
+        Hierarchy.anchoredPosition = new Vector2(Hierarchy.anchoredPosition.x, -(Hierarchy.sizeDelta.y)/2);
     }
 
     public void DisplayImage(String imgPath)
