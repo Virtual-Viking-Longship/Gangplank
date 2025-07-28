@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Ship.unity
     guid: 027b6aa0c6c4e4784b897faad3f467e0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Enviornment.unity
     guid: 1383697a15062434590133b4fcc62d87
   - enabled: 0
@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Samples/Meta XR Interaction SDK/66.0.0/Example Scenes/PanelWithManipulators.unity
     guid: bafd0df297556dd44832193b22fca1ae
+  - enabled: 1
+    path: Assets/Scenes/1 to 10 Ship Building.unity
+    guid: d72f744651eb5d646ad9de586d984cd0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 9dd001b0fba8c4f899b021bc4bc1c058, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 980613ffc8a244d419d1ad520518fca1, type: 2}

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - SamplesInfoPanel
   - Menu
+  - Ship Piece
+  - Anchor
+  - Floor
   layers:
   - Default
   - TransparentFX
