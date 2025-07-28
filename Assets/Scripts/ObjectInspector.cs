@@ -12,7 +12,7 @@ This class is added to an object as a component.
 */
 public class ObjectInspector : MonoBehaviour
 {
-    [SerializeField] private Transform infoPanel;
+    [SerializeField] private GameObject infoPanel;
     public Color highlightColor = Color.yellow;
     public Outline outline;
 
@@ -43,6 +43,7 @@ public class ObjectInspector : MonoBehaviour
         infoPanel.GetComponent<CanvasGroup>().alpha = 1;
         infoPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
         infoPanel.GetComponent<CanvasGroup>().interactable = true;
+        infoPanel.SetActive(true);
         //is there a better way to do this?
         // infoPanel.GetChild(0).GetChild(0).GetComponent<BoxCollider>().enabled = true;        //for old info panel structure
         //infoPanel.GetChild(1).GetComponent<BoxCollider>().enabled = true;                       //for new info panel structure

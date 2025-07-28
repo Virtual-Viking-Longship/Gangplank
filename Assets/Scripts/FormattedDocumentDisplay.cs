@@ -35,7 +35,8 @@ public class FormattedDocumentDisplay : MonoBehaviour
     {
         
         foreach (Transform child in verticalLayout) Destroy(child.gameObject);
-        
+        foreach (Transform child in Title) Destroy(child.gameObject);
+
         string fileContents = document.text;
 
         //to fix formatting that makes .md look good in the git repo
