@@ -9,6 +9,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine.XR.Interaction.Toolkit;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Oculus.Interaction;
 
 /*
 This is the code for the model ship
@@ -60,7 +61,7 @@ public class ModelShip : MonoBehaviour
     public void SpawnPiece()
     {
         currentPieceIndex++;
-        if(currentPieceIndex >= shipPieces.Count) return;
+        if (currentPieceIndex >= shipPieces.Count) return;
 
         Transform currentPiece = shipPieces[currentPieceIndex];
         currentPiece.gameObject.SetActive(true);
@@ -68,16 +69,17 @@ public class ModelShip : MonoBehaviour
         currentPiece.GetComponent<MeshRenderer>().material = highlihtedMaterial;
 
         GameObject shipPiece = Instantiate(shipPiecePrefab, shipPieceSpawnPoint.position, currentPiece.rotation * Quaternion.Euler(0, 90, 0));
-        shipPiece.transform.localScale = new Vector3(currentPiece.localScale.x * transform.localScale.x, 
-                                                        currentPiece.localScale.y * transform.localScale.y, 
+        shipPiece.transform.localScale = new Vector3(currentPiece.localScale.x * transform.localScale.x,
+                                                        currentPiece.localScale.y * transform.localScale.y,
                                                         currentPiece.localScale.z * transform.localScale.z);
         shipPiece.name = currentPiece.name;
         shipPiece.GetComponent<MeshFilter>().mesh = currentPiece.GetComponent<MeshFilter>().mesh;
         shipPiece.GetComponent<MeshCollider>().sharedMesh = shipPiece.GetComponent<MeshFilter>().mesh;
+        shipPiece.GetComponent<ObjectInspector>().infoPanel = GameObject.FindWithTag("InfoPanel").gameObject;
 
         // Hooks up to events to when the player picks up the piece and when they place the piece in the model ship
-        shipPiece.GetComponent<XRGrabInteractable>().selectEntered.AddListener(delegate{PlayerPickedUp(shipPiece.name);});
-        shipPiece.GetComponent<Placeable>().onPlace.AddListener(delegate{PlacePieces(currentPieceIndex, currentPiece);});
+        // shipPiece.GetComponent<DistanceGrabInteractable>().selectEntered.AddListener(delegate{PlayerPickedUp(shipPiece.name);});
+        // shipPiece.GetComponent<Placeable>().onPlace.AddListener(delegate{PlacePieces(currentPieceIndex, currentPiece);});
     }
 
     private string RemoveNumber(string pieceName)

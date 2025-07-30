@@ -12,15 +12,15 @@ This class is added to an object as a component.
 */
 public class ObjectInspector : MonoBehaviour
 {
-    [SerializeField] private GameObject infoPanel;
+    [SerializeField] public GameObject infoPanel;
     public Color highlightColor = Color.yellow;
     public Outline outline;
 
     private void Start()
     {
-        Transform goal = gameObject.transform;
-        TextAsset document = Resources.Load<TextAsset>(goal.name);
-        infoPanel.GetComponentInChildren<FormattedDocumentDisplay>().DisplayDocument(document);
+        // Transform goal = gameObject.transform;
+        // TextAsset document = Resources.Load<TextAsset>(goal.name);
+        // infoPanel.GetComponentInChildren<FormattedDocumentDisplay>().DisplayDocument(document);
     }
 
     public void OnSelectEnter()
@@ -37,7 +37,7 @@ public class ObjectInspector : MonoBehaviour
     {
 
         Transform goal = gameObject.transform;
-        TextAsset document = Resources.Load<TextAsset>(goal.name);
+        TextAsset document = Resources.Load<TextAsset>("Keel/" + goal.name);
         if (document == null) return;
 
         infoPanel.GetComponent<CanvasGroup>().alpha = 1;
