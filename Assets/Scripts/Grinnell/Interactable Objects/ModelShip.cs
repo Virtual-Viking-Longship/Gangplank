@@ -142,7 +142,7 @@ public class ModelShip : MonoBehaviour
             foreach(MeshRenderer mr in child.GetComponentsInChildren<MeshRenderer>()) mr.material.SetColor("_BaseColor", new Color(0, 1, 0, 1));
             child.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", new Color(0, 1, 0, 1));
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
 
             foreach(MeshRenderer mr in child.GetComponentsInChildren<MeshRenderer>()) mr.material.SetColor("_BaseColor", pieceColor);
             currentChild.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", pieceColor);
