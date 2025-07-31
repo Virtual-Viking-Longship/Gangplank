@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9bb33a0da3b439ba0f2ddfdbf95a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoPanel: {fileID: 1631255870111767762, guid: 1b22431bb530d4c9ca38c91762144bda, type: 3}
+  infoPanel: {fileID: 0}
   highlightColor: {r: 0.9716981, g: 0.9713329, b: 0.9671146, a: 1}
   outline: {fileID: 263291510423709885}
 --- !u!114 &8733719779650417064

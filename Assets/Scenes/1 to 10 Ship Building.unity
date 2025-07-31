@@ -7014,6 +7014,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b22431bb530d4c9ca38c91762144bda, type: 3}
+--- !u!1 &1342648114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1631255870111767762, guid: 1b22431bb530d4c9ca38c91762144bda, type: 3}
+  m_PrefabInstance: {fileID: 1342648113}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1363434213
 GameObject:
   m_ObjectHideFlags: 0
@@ -12721,6 +12726,7 @@ MonoBehaviour:
   shipPieceSpawnPoint: {fileID: 1533902998}
   shipPiecePrefab: {fileID: 3549023695507966145, guid: 32c9a603b513f444897c6e4553cf916b, type: 3}
   highlihtedMaterial: {fileID: 2100000, guid: 7c39546ad41405145aee695a21d6fcd8, type: 2}
+  InfoPanel: {fileID: 1342648114}
 --- !u!65 &3410510374042973060
 BoxCollider:
   m_ObjectHideFlags: 0
