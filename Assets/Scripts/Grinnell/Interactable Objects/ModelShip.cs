@@ -79,8 +79,8 @@ public class ModelShip : MonoBehaviour
         shipPiece.GetComponent<ObjectInspector>().infoPanel = InfoPanel;
 
         // Hooks up to events to when the player picks up the piece and when they place the piece in the model ship
-        // shipPiece.GetComponent<DistanceGrabInteractable>().selectEntered.AddListener(delegate{PlayerPickedUp(shipPiece.name);});
-        // shipPiece.GetComponent<Placeable>().onPlace.AddListener(delegate{PlacePieces(currentPieceIndex, currentPiece);});
+        shipPiece.GetComponent<InteractableUnityEventWrapper>().WhenSelect.AddListener(delegate{PlayerPickedUp(shipPiece.name);});
+        shipPiece.GetComponent<Placeable>().onPlace.AddListener(delegate{PlacePieces(currentPieceIndex, currentPiece);});
     }
 
     private string RemoveNumber(string pieceName)
@@ -155,8 +155,8 @@ public class ModelShip : MonoBehaviour
     // Note that when playing sounds that are expected to repeat a lot you shold randomize the pitch
     private void PlayPlacePieceSound()
     {
-        GetComponent<AudioSource>().pitch = 1 + Random.Range(-0.2f, 0.2f);
-        GetComponent<AudioSource>().Play();
+        GetComponentInChildren<AudioSource>().pitch = 1 + Random.Range(-0.2f, 0.2f);
+        GetComponentInChildren<AudioSource>().Play();
     }
 
     void PrintData(string pieceName, float startTime, Vector3 pieceStartPos, Vector3 pieceEndPos)
