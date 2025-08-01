@@ -19,7 +19,7 @@ public class ObjectInspector : MonoBehaviour
     private void Start()
     {
         // Transform goal = gameObject.transform;
-        // TextAsset document = Resources.Load<TextAsset>(goal.name);
+        // TextAsset document = Resources.Load<TextAsset>("Ship-Annotations/annotations/" + goal.name);
         // infoPanel.GetComponentInChildren<FormattedDocumentDisplay>().DisplayDocument(document);
     }
 
@@ -37,7 +37,7 @@ public class ObjectInspector : MonoBehaviour
     {
 
         Transform goal = gameObject.transform;
-        TextAsset document = Resources.Load<TextAsset>("Keel/" + goal.name);
+        TextAsset document = Resources.Load<TextAsset>("Ship-Annotations/annotations/" + goal.name);
         if (document == null) return;
 
         infoPanel.GetComponent<CanvasGroup>().alpha = 1;
