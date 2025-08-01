@@ -30,6 +30,7 @@ public class ModelShip : MonoBehaviour
     private int selectedPiece = -1;
     List<Transform> shipPieces;
     public GameObject InfoPanel;
+    public Transform target = null;
 
     private int currentPieceIndex = -1;
     bool[] piecesBuildStatus;
@@ -77,6 +78,7 @@ public class ModelShip : MonoBehaviour
         shipPiece.GetComponent<MeshFilter>().mesh = currentPiece.GetComponent<MeshFilter>().mesh;
         shipPiece.GetComponent<MeshCollider>().sharedMesh = shipPiece.GetComponent<MeshFilter>().mesh;
         shipPiece.GetComponent<ObjectInspector>().infoPanel = InfoPanel;
+        shipPiece.GetComponent<ObjectInspector>().target = target;
 
         // Hooks up to events to when the player picks up the piece and when they place the piece in the model ship
         shipPiece.GetComponent<InteractableUnityEventWrapper>().WhenSelect.AddListener(delegate{PlayerPickedUp(shipPiece.name);});
