@@ -44,13 +44,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.838
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 184
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -143,6 +143,8 @@ GameObject:
   - component: {fileID: -5932324618755881809}
   - component: {fileID: 7705978891025507434}
   - component: {fileID: 3453914879222919585}
+  - component: {fileID: 8733719779650417064}
+  - component: {fileID: 2351139443802221166}
   - component: {fileID: 8694137420802312721}
   - component: {fileID: 4410147161432819923}
   - component: {fileID: 3230292133926421751}
@@ -151,7 +153,7 @@ GameObject:
   - component: {fileID: 2423021914394063508}
   - component: {fileID: 2785497350456902708}
   m_Layer: 0
-  m_Name: Generic Ship Piece
+  m_Name: Generic Ship Piece BAK
   m_TagString: Ship Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,6 +307,100 @@ MonoBehaviour:
   highlightColor: {r: 0.9716981, g: 0.9713329, b: 0.9671146, a: 1}
   outline: {fileID: 0}
   target: {fileID: 0}
+--- !u!114 &8733719779650417064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3549023695507966145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactorFilters: []
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
+  _data: {fileID: 0}
+  _pointableElement: {fileID: 0}
+  _surface: {fileID: 7705978891025507434}
+  _selectSurface: {fileID: 0}
+  _movementProvider: {fileID: 0}
+  _tiebreakerScore: 0
+--- !u!114 &2351139443802221166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3549023695507966145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactableView: {fileID: 8733719779650417064}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3453914879222919585}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3453914879222919585}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3453914879222919585}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: SendInfoPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8694137420802312721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,7 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 0}
   _customIcon: {fileID: 2800000, guid: aa3a2b3718100f84fb5d8ff9adb8ccb7, type: 3}
-  _snappiness: 1
+  _snappiness: 0
 --- !u!114 &2423021914394063508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,9 +534,9 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3453914879222919585}
-        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
-        m_MethodName: SendInfoPanel
+      - m_Target: {fileID: 8694137420802312721}
+        m_TargetAssemblyTypeName: Placeable, Assembly-CSharp
+        m_MethodName: OnPlayerPickUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -450,9 +546,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8694137420802312721}
-        m_TargetAssemblyTypeName: Placeable, Assembly-CSharp
-        m_MethodName: OnPlayerPickUp
+      - m_Target: {fileID: 3453914879222919585}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: SendInfoPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
