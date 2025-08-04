@@ -55,8 +55,8 @@ public class Placeable : MonoBehaviour
 
     private IEnumerator TranslateToTargetCoroutine(Vector3 targetPos, Quaternion targetRot, float translateTime, bool targetIsFinal)
     {
-        hgInteractable.enabled = false;
-        dgInteractable.enabled = false;
+        // hgInteractable.enabled = false;
+        // dgInteractable.enabled = false;
         Vector3 startPos = transform.position;
         Quaternion startRot = transform.rotation;
 

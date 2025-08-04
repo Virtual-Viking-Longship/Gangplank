@@ -48,7 +48,7 @@ public class FormattedDocumentDisplay : MonoBehaviour
         fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"(?<=[\s*])_|_(?=[\s*])", "*");
         // Replace square brackets around citations with double dashes to prevent markdown errors
         fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"\[citations", "-- citations");
-        fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"\]\s+\n", "");
+        fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"\](?=\s+)", "");
 
 
         //finds the line with the image file information
