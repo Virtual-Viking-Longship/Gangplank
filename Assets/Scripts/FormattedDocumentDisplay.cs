@@ -8,6 +8,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using LogicUI.FancyTextRendering.MarkdownLogic;
+using System.Text.RegularExpressions;
 
 /*
 This class handles the display of the information of inspected objects
@@ -42,6 +43,9 @@ public class FormattedDocumentDisplay : MonoBehaviour
         //to fix formatting that makes .md look good in the git repo
         fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"<\/?div(.*?)>\s*\n\s*", "");
         fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"  ", "");
+        // Replace underscores with asterisks for italics, but only if preceded or followed by whitespace or asterisks 
+        fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"(?<=[\s*])_|_(?=[\s*])", "*");
+        fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"\[citations", "-- citations");
 
         //finds the line with the image file information
         var regex = new System.Text.RegularExpressions.Regex(@"!\[(.*?)\]\((.*?)\)");
@@ -49,16 +53,23 @@ public class FormattedDocumentDisplay : MonoBehaviour
 
         //if there is an image
         //needs to be modified to a loop if there will be more than one image
-        if (matches.Count > 0) {
-            var match = matches[0];
-            var imgPath = match.Groups[2].Value;        //extracts the actual image path from the regex match: the part in ()
-            int startIndex = match.Index;
-            int endIndex = match.Length + startIndex;
+        if (matches.Count > 0)
+        {
+            int handoffIndex = 0;
+            foreach (Match m in matches)
+            {
+                var imgPath = m.Groups[2].Value; //extracts the actual image path from the regex match: the part in ()
+                int startIndex = m.Index;
+                int endIndex = m.Length + startIndex;
 
-            displayText(fileContents.Substring(0, startIndex));
-            DisplayImage(imgPath);
-            displayText(fileContents.Substring(endIndex));
-        } else {
+                displayText(fileContents.Substring(handoffIndex, startIndex - handoffIndex));
+                DisplayImage(imgPath);
+                handoffIndex = endIndex;
+            }
+            displayText(fileContents.Substring(handoffIndex));
+        }
+        else
+        {
             displayText(fileContents);
         }
         TextMeshProUGUI block = Instantiate(titleBlock, Title).GetComponent<TextMeshProUGUI>(); //additional step for formatting the title
@@ -90,7 +101,7 @@ public class FormattedDocumentDisplay : MonoBehaviour
 
     public void DisplayImage(String imgPath)
     {
-        imgPath = imgPath.Substring(3, imgPath.Length-7);
+        imgPath = "Ship-Annotations/" + imgPath.Substring(3, imgPath.Length-7);
 
         int childCount = gameObject.transform.parent.childCount;
         GameObject block = Instantiate(imageBlock, verticalLayout);

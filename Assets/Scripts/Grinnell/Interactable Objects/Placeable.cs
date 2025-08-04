@@ -21,7 +21,7 @@ public class Placeable : MonoBehaviour
     public Coroutine translateCoroutine = null;
     public Vector3 originalPos;
     public Quaternion originalRot;
-    public DistanceHandGrabInteractable xrInteractable;
+    public InteractableGroupView xrInteractable;
 
 
     void Start()
@@ -29,7 +29,7 @@ public class Placeable : MonoBehaviour
         originalPos = transform.position;
         originalRot = transform.rotation;
 
-        xrInteractable = GetComponent<DistanceHandGrabInteractable>();
+        xrInteractable = GetComponent<InteractableGroupView>();
     }
 
     // This is meant to reset the position when the piece falls out of some bounds
@@ -74,7 +74,7 @@ public class Placeable : MonoBehaviour
         }
 
         GetComponentInParent<Rigidbody>().isKinematic = false;
-        xrInteractable.enabled = true;
+        // xrInteractable.enabled = true;
         translateCoroutine = null;
     }
 }
