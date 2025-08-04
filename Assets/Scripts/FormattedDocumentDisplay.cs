@@ -42,61 +42,74 @@ public class FormattedDocumentDisplay : MonoBehaviour
 
         //to fix formatting that makes .md look good in the git repo
         fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"<\/?div(.*?)>\s*\n\s*", "");
+        // Remove extra spaces to prevent line breaks in the text
         fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"  ", "");
         // Replace underscores with asterisks for italics, but only if preceded or followed by whitespace or asterisks 
         fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"(?<=[\s*])_|_(?=[\s*])", "*");
+        // Replace square brackets around citations with double dashes to prevent markdown errors
         fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"\[citations", "-- citations");
+        fileContents = System.Text.RegularExpressions.Regex.Replace(fileContents, @"\]\s+\n", "");
+
 
         //finds the line with the image file information
         var regex = new System.Text.RegularExpressions.Regex(@"!\[(.*?)\]\((.*?)\)");
         var matches = regex.Matches(fileContents);
 
         //if there is an image
-        //needs to be modified to a loop if there will be more than one image
         if (matches.Count > 0)
         {
-            int handoffIndex = 0;
+            int handoffIndex = 0; // set index for building text blocks between images
+            // loop through image matches and display text before followed by image
+            // the regex matches the image syntax in markdown: ![alt text](image path)
             foreach (Match m in matches)
             {
                 var imgPath = m.Groups[2].Value; //extracts the actual image path from the regex match: the part in ()
                 int startIndex = m.Index;
                 int endIndex = m.Length + startIndex;
 
-                displayText(fileContents.Substring(handoffIndex, startIndex - handoffIndex));
-                DisplayImage(imgPath);
-                handoffIndex = endIndex;
+                DisplayText(fileContents.Substring(handoffIndex, startIndex - handoffIndex)); // display text to this point
+                DisplayImage(imgPath); // display image
+                handoffIndex = endIndex; // update handoff index to the end of the image match
             }
-            displayText(fileContents.Substring(handoffIndex));
+            // display any remaining text after the last image
+            DisplayText(fileContents.Substring(handoffIndex));
         }
         else
         {
-            displayText(fileContents);
+            DisplayText(fileContents);
         }
-        TextMeshProUGUI block = Instantiate(titleBlock, Title).GetComponent<TextMeshProUGUI>(); //additional step for formatting the title
-        block.gameObject.SetActive(true);
-        var markdownRenderer = block.GetComponent<MarkdownRenderer>();
-        string tempstring = document.name[0].ToString();
-        tempstring = tempstring.ToUpper();
-        string doc = document.name.Remove(0, 1);
-        doc = doc.Insert(0, tempstring);
-        markdownRenderer.Source = doc;
-        StartCoroutine(position()); //reposition layout for proper scroll
+        DisplayTitle(document);
     }
 
-    private void displayText(string text) {
+    private void DisplayText(string text) {
         TextMeshProUGUI block = Instantiate(textBlock, verticalLayout).GetComponent<TextMeshProUGUI>();
         block.gameObject.SetActive(true);
         var markdownRenderer = block.GetComponent<MarkdownRenderer>();
         markdownRenderer.Source = text;
     }
-    private IEnumerator position()
+
+    private void DisplayTitle(TextAsset document)
+    {
+        TextMeshProUGUI block = Instantiate(titleBlock, Title).GetComponent<TextMeshProUGUI>(); //additional step for formatting the title
+        block.gameObject.SetActive(true);
+        var markdownRenderer = block.GetComponent<MarkdownRenderer>();
+        // Capitalize the first letter of the document name and remove the .md extension
+        string tempstring = document.name[0].ToString();
+        tempstring = tempstring.ToUpper();
+        string doc = document.name.Remove(0, 1);
+        doc = doc.Insert(0, tempstring);
+        markdownRenderer.Source = doc;
+        StartCoroutine(Position()); //reposition layout for proper scroll
+
+    }
+    private IEnumerator Position()
     {
         yield return null;
         yield return null;
         Hierarchy.anchorMin = new Vector2(0, 1); //set anchor preset in order to start scroll at the top
         Hierarchy.anchorMax = new Vector2(1, 1);
         Hierarchy.pivot = new Vector2(0.5f, 0.5f);
-        Hierarchy.anchoredPosition = new Vector2(Hierarchy.anchoredPosition.x, -(Hierarchy.sizeDelta.y)/2);
+        Hierarchy.anchoredPosition = new Vector2(Hierarchy.anchoredPosition.x, -(Hierarchy.sizeDelta.y) / 2);
     }
 
     public void DisplayImage(String imgPath)
