@@ -5,18 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Static-Lighting.unity
-    guid: 027b6aa0c6c4e4784b897faad3f467e0
-  - enabled: 0
-    path: Assets/Scenes/Enviornment archive/Enviornment.unity
-    guid: 1383697a15062434590133b4fcc62d87
+  - enabled: 1
+    path: Assets/Scenes/Core-Scene-And-Rig.unity
+    guid: ab543d67836fd42fb8690bbfef3ef6e2
+  - enabled: 1
+    path: Assets/Scenes/World-Environment.unity
+    guid: 58293a145610e4041ae7d4a3e6dd16ff
   - enabled: 1
     path: Assets/Scenes/1 to 10 Ship Building.unity
     guid: d72f744651eb5d646ad9de586d984cd0
-  - enabled: 0
-    path: Assets/Scenes/Rig-UI-Game.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Ship-With-Annotations.unity
+    guid: 94cdc00fc77283c419b1fcdb93b937d8
+  - enabled: 1
+    path: Assets/Scenes/Rowing-Game.unity
+    guid: 51d1a26c0a22e4ca4bf75bb1aefbcab9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 9dd001b0fba8c4f899b021bc4bc1c058, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 980613ffc8a244d419d1ad520518fca1, type: 2}
