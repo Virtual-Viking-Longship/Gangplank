@@ -5,17 +5,10 @@ public class SceneFader : MonoBehaviour
 {
     public Animator animator;
     private int destination;
-    private Scene world;
-    private Scene build;
-    private Scene ship;
-    private Scene row;
+    private Scene scene;
 
     void Start()
     {
-        world = SceneManager.GetSceneByName("World-Environment");
-        build = SceneManager.GetSceneByName("1 to 10 Ship Building");
-        ship = SceneManager.GetSceneByName("Ship-With-Annotations");
-        row = SceneManager.GetSceneByName("Rowing-Game");
         destination = 0;
         FadeComplete();
     }
@@ -26,50 +19,52 @@ public class SceneFader : MonoBehaviour
         destination = Index;
     }
 
-    public void FadeComplete ()
+    //toggles scene on or off based on toggle. Does nothing is already satisfied
+    private void HelpLoad(string scenename, bool toggle)
     {
-        world = SceneManager.GetSceneByName("World-Environment");
-        build = SceneManager.GetSceneByName("1 to 10 Ship Building");
-        ship = SceneManager.GetSceneByName("Ship-With-Annotations");
-        row = SceneManager.GetSceneByName("Rowing-Game");
-        GameObject player = GameObject.FindWithTag("Player");
-        if (!world.isLoaded)
-            {
-                SceneManager.LoadScene("World-Environment", LoadSceneMode.Additive);
-            }
-        if (destination == 0)  // Shoreline
+        scene = SceneManager.GetSceneByName(scenename);
+        if (toggle && !scene.isLoaded)
         {
-            if (!build.isLoaded)
-            {
-                SceneManager.LoadScene("1 to 10 Ship Building", LoadSceneMode.Additive);
-            }
+            SceneManager.LoadScene(scenename, LoadSceneMode.Additive);
+        }
+        else if (!toggle && scene.isLoaded)
+        {
+            SceneManager.UnloadSceneAsync(scenename);
+        }
+    }
+    public void FadeComplete()
+    {
+        
+        GameObject player = GameObject.FindWithTag("Player");
+        if (destination == 0)  // Ship Building
+        {
+            HelpLoad("World-Environment", true);
+            HelpLoad("1 to 10 Ship Building", true);
+            HelpLoad("Ship-With-Annotations", false);
+            HelpLoad("Rowing-Game", false);
         }
         if (destination == 1) //Back of Ship Annotations
         {
-            if (!ship.isLoaded)
-            {
-                SceneManager.LoadScene("Ship-With-Annotations", LoadSceneMode.Additive);
-            }
+            HelpLoad("World-Environment", true);
+            HelpLoad("1 to 10 Ship Building", false);
+            HelpLoad("Ship-With-Annotations", true);
+            HelpLoad("Rowing-Game", false);
         }
         if (destination == 2) // Front of Ship Annotations
         {
-            if (!ship.isLoaded)
-            {
-                SceneManager.LoadScene("Ship-With-Annotations", LoadSceneMode.Additive);
-            }
+            HelpLoad("World-Environment", true);
+            HelpLoad("1 to 10 Ship Building", false);
+            HelpLoad("Ship-With-Annotations", true);
+            HelpLoad("Rowing-Game", false);
             player.transform.SetPositionAndRotation(new Vector3(-15, 0, 7), new Quaternion(0, 0, 0, 90));
         }
-        if (destination == 3) // Rowing MiniGame
+        if (destination == 3) // Rowing Game
         {
-            player.transform.SetPositionAndRotation(new Vector3(-15.83f, -0.187f, 7.071f), new Quaternion(0, 0, 0, 0));
-            if (!ship.isLoaded)
-            {
-                SceneManager.LoadScene("Ship-With-Annotations", LoadSceneMode.Additive);
-            }
-            if (!row.isLoaded)
-            {
-                SceneManager.LoadScene("Rowing-Game", LoadSceneMode.Additive);
-            }
+            HelpLoad("World-Environment", true);
+            HelpLoad("1 to 10 Ship Building", false);
+            HelpLoad("Ship-With-Annotations", true);
+            HelpLoad("Rowing-Game", true);
+            player.transform.SetPositionAndRotation(new Vector3(-15.83f, -0.05f, 7.071f), new Quaternion(0, 0, 0, 0));
         }
         animator.SetTrigger("Fade In");
     }
