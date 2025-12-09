@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rowing-Game.unity
     guid: 51d1a26c0a22e4ca4bf75bb1aefbcab9
+  - enabled: 1
+    path: Assets/Scenes/Hedeby-World.unity
+    guid: a6d5b7b4d03714702a5035c22e77313b
+  - enabled: 1
+    path: Assets/Scenes/Hedeby-Game.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 9dd001b0fba8c4f899b021bc4bc1c058, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 980613ffc8a244d419d1ad520518fca1, type: 2}
