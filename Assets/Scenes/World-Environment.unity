@@ -6000,7 +6000,7 @@ PrefabInstance:
     - target: {fileID: -7918335002988649766, guid: b9332c629a9d8e34985ed59ecc7bd580, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 222034309c756c3429b2319477845e90, type: 2}
+      objectReference: {fileID: 2100000, guid: 3b5fbc0f7f04429f8122dbf35e34166a, type: 2}
     - target: {fileID: -7798227654717009385, guid: b9332c629a9d8e34985ed59ecc7bd580, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -6152,7 +6152,7 @@ PrefabInstance:
     - target: {fileID: 882129737928793925, guid: b9332c629a9d8e34985ed59ecc7bd580, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 222034309c756c3429b2319477845e90, type: 2}
+      objectReference: {fileID: 2100000, guid: 3b5fbc0f7f04429f8122dbf35e34166a, type: 2}
     - target: {fileID: 919132149155446097, guid: b9332c629a9d8e34985ed59ecc7bd580, type: 3}
       propertyPath: m_Name
       value: Scenery-Skybox
@@ -7173,7 +7173,7 @@ PrefabInstance:
     - target: {fileID: -7918335002988649766, guid: bc16de54fe8cb2340958abc7d3e5ed90, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 222034309c756c3429b2319477845e90, type: 2}
+      objectReference: {fileID: 2100000, guid: 3b5fbc0f7f04429f8122dbf35e34166a, type: 2}
     - target: {fileID: -7906629938304254751, guid: bc16de54fe8cb2340958abc7d3e5ed90, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647

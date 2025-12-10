@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mat_Rope
-  m_Shader: {fileID: -6465566751694194690, guid: a93cbfbbbf3f13045a8a129f17b2ca87, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 5e2772447ac44040b235fb207ea72164, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
