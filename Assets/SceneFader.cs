@@ -42,6 +42,8 @@ public class SceneFader : MonoBehaviour
             HelpLoad("1 to 10 Ship Building", true);
             HelpLoad("Ship-With-Annotations", false);
             HelpLoad("Rowing-Game", false);
+            HelpLoad("Hedeby-Game", false);
+            HelpLoad("Hedeby-World", false);
         }
         if (destination == 1) //Back of Ship Annotations
         {
@@ -49,6 +51,8 @@ public class SceneFader : MonoBehaviour
             HelpLoad("1 to 10 Ship Building", false);
             HelpLoad("Ship-With-Annotations", true);
             HelpLoad("Rowing-Game", false);
+            HelpLoad("Hedeby-Game", false);
+            HelpLoad("Hedeby-World", false);
         }
         if (destination == 2) // Front of Ship Annotations
         {
@@ -56,6 +60,8 @@ public class SceneFader : MonoBehaviour
             HelpLoad("1 to 10 Ship Building", false);
             HelpLoad("Ship-With-Annotations", true);
             HelpLoad("Rowing-Game", false);
+            HelpLoad("Hedeby-Game", false);
+            HelpLoad("Hedeby-World", false);
             player.transform.SetPositionAndRotation(new Vector3(-15, 0, 7), new Quaternion(0, 0, 0, 90));
         }
         if (destination == 3) // Rowing Game
@@ -64,7 +70,19 @@ public class SceneFader : MonoBehaviour
             HelpLoad("1 to 10 Ship Building", false);
             HelpLoad("Ship-With-Annotations", true);
             HelpLoad("Rowing-Game", true);
+            HelpLoad("Hedeby-Game", false);
+            HelpLoad("Hedeby-World", false);
             player.transform.SetPositionAndRotation(new Vector3(-15.83f, -0.05f, 7.071f), new Quaternion(0, 0, 0, 0));
+        }
+        if (destination == 4) // Hedeby Chest
+        {
+            HelpLoad("World-Environment", false);
+            HelpLoad("1 to 10 Ship Building", false);
+            HelpLoad("Ship-With-Annotations", false);
+            HelpLoad("Rowing-Game", false);
+            HelpLoad("Hedeby-Game", true);
+            HelpLoad("Hedeby-World", true);
+            player.transform.SetPositionAndRotation(new Vector3(1.123f, 1.605f, -12.234f), new Quaternion(0, 180, 0, 0));
         }
         animator.SetTrigger("Fade In");
     }
