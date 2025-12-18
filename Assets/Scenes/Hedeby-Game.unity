@@ -1827,6 +1827,7 @@ GameObject:
   - component: {fileID: 226749265}
   - component: {fileID: 226749264}
   - component: {fileID: 226749271}
+  - component: {fileID: 226749272}
   m_Layer: 0
   m_Name: Comb
   m_TagString: Untagged
@@ -2003,8 +2004,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoPanel: {fileID: 1169790001}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
-  outline: {fileID: 0}
+  outline: {fileID: 226749272}
   target: {fileID: 0}
+--- !u!114 &226749272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226749263}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0.64705884, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &254197063
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,10 +3078,34 @@ MonoBehaviour:
       m_Calls: []
   _whenHover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 226749271}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenUnhover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 226749271}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
@@ -3077,6 +3120,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 226749272}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 402296554}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
@@ -3522,6 +3577,7 @@ GameObject:
   - component: {fileID: 466374848}
   - component: {fileID: 466374849}
   - component: {fileID: 466374853}
+  - component: {fileID: 466374854}
   m_Layer: 0
   m_Name: Mug
   m_TagString: Untagged
@@ -3699,8 +3755,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoPanel: {fileID: 1169790001}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
-  outline: {fileID: 0}
+  outline: {fileID: 466374854}
   target: {fileID: 0}
+--- !u!114 &466374854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466374845}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0.64705884, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &480631547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3792,6 +3866,7 @@ GameObject:
   - component: {fileID: 501295863}
   - component: {fileID: 501295864}
   - component: {fileID: 501295868}
+  - component: {fileID: 501295869}
   m_Layer: 0
   m_Name: Spoon
   m_TagString: Untagged
@@ -3968,8 +4043,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoPanel: {fileID: 1169790001}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
-  outline: {fileID: 0}
+  outline: {fileID: 501295869}
   target: {fileID: 0}
+--- !u!114 &501295869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501295860}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0.64705884, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &514660714
 GameObject:
   m_ObjectHideFlags: 0
@@ -6863,6 +6956,7 @@ GameObject:
   - component: {fileID: 983803530}
   - component: {fileID: 983803531}
   - component: {fileID: 983803535}
+  - component: {fileID: 983803536}
   m_Layer: 0
   m_Name: Ladle
   m_TagString: Untagged
@@ -7044,6 +7138,24 @@ MonoBehaviour:
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
   outline: {fileID: 0}
   target: {fileID: 0}
+--- !u!114 &983803536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983803527}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0.64705884, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &990805953
 GameObject:
   m_ObjectHideFlags: 0
@@ -7060,6 +7172,7 @@ GameObject:
   - component: {fileID: 990805960}
   - component: {fileID: 990805959}
   - component: {fileID: 990805961}
+  - component: {fileID: 990805962}
   m_Layer: 0
   m_Name: Shears
   m_TagString: Untagged
@@ -7237,8 +7350,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoPanel: {fileID: 1169790001}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
-  outline: {fileID: 0}
+  outline: {fileID: 990805962}
   target: {fileID: 0}
+--- !u!114 &990805962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990805953}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0.64705884, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1023822802
 GameObject:
   m_ObjectHideFlags: 0
@@ -9109,10 +9240,34 @@ MonoBehaviour:
       m_Calls: []
   _whenHover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 501295868}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenUnhover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 501295868}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
@@ -9127,6 +9282,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 501295869}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1202785055}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
@@ -9368,10 +9535,34 @@ MonoBehaviour:
       m_Calls: []
   _whenHover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 990805961}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenUnhover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 990805961}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
@@ -9386,6 +9577,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 990805962}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1238813448}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
@@ -12817,10 +13020,34 @@ MonoBehaviour:
       m_Calls: []
   _whenHover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5277588851204649323}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenUnhover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5277588851204649323}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
@@ -12835,6 +13062,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5277588851204649324}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1650057961}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
@@ -13041,6 +13280,7 @@ GameObject:
   - component: {fileID: 1669227174}
   - component: {fileID: 1669227173}
   - component: {fileID: 1669227175}
+  - component: {fileID: 1669227176}
   m_Layer: 0
   m_Name: Bowl
   m_TagString: Untagged
@@ -13218,8 +13458,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoPanel: {fileID: 1169790001}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
-  outline: {fileID: 0}
+  outline: {fileID: 1669227176}
   target: {fileID: 0}
+--- !u!114 &1669227176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669227167}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0.64705884, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1670563344
 GameObject:
   m_ObjectHideFlags: 0
@@ -13622,10 +13880,34 @@ MonoBehaviour:
       m_Calls: []
   _whenHover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 466374853}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenUnhover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 466374853}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
@@ -13640,6 +13922,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 466374854}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1683015367}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
@@ -14028,10 +14322,34 @@ MonoBehaviour:
       m_Calls: []
   _whenHover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1669227175}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   _whenUnhover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1669227175}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
@@ -14046,6 +14364,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1669227176}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1732248260}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
@@ -16823,10 +17153,34 @@ MonoBehaviour:
       m_Calls: []
   _whenHover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 983803535}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenUnhover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 983803535}
+        m_TargetAssemblyTypeName: ObjectInspector, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
@@ -16841,6 +17195,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 983803536}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2113596511}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
@@ -17576,7 +17942,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -17620,6 +17986,7 @@ GameObject:
   - component: {fileID: 5277588851204649320}
   - component: {fileID: 5277588851204649322}
   - component: {fileID: 5277588851204649323}
+  - component: {fileID: 5277588851204649324}
   m_Layer: 0
   m_Name: Scale
   m_TagString: Untagged
@@ -17700,8 +18067,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoPanel: {fileID: 1169790001}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
-  outline: {fileID: 0}
+  outline: {fileID: 5277588851204649324}
   target: {fileID: 0}
+--- !u!114 &5277588851204649324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5277588851204649319}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0.64705884, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &5407913594761936544
 GameObject:
   m_ObjectHideFlags: 0
