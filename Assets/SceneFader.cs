@@ -72,7 +72,7 @@ public class SceneFader : MonoBehaviour
             HelpLoad("Rowing-Game", true);
             HelpLoad("Hedeby-Game", false);
             HelpLoad("Hedeby-World", false);
-            player.transform.SetPositionAndRotation(new Vector3(-15.83f, -0.05f, 7.071f), new Quaternion(0, 0, 0, 0));
+            player.transform.SetPositionAndRotation(new Vector3(-15.83f, 0.3f, 7.071f), new Quaternion(0, 0, 0, 0));
         }
         if (destination == 4) // Hedeby Chest
         {
@@ -82,7 +82,7 @@ public class SceneFader : MonoBehaviour
             HelpLoad("Rowing-Game", false);
             HelpLoad("Hedeby-Game", true);
             HelpLoad("Hedeby-World", true);
-            player.transform.SetPositionAndRotation(new Vector3(1.123f, 1.605f, -12.234f), new Quaternion(0, 180, 0, 0));
+            player.transform.SetPositionAndRotation(new Vector3(1.123f, 1.95f, -12.234f), new Quaternion(0, 180, 0, 0));
         }
         animator.SetTrigger("Fade In");
     }
