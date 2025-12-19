@@ -52,7 +52,7 @@ Library: /Users/sbjhomeimac/Documents/GitHub/Gangplank/Temp/BurstOutput/tempburs
 --assembly-defines=Unity.XR.Oculus;
 --assembly-defines=UnityEngine;
 --generate-link-xml=Temp/burst.link.xml
---temp-folder=/Users/sbjhomeimac/Documents/GitHub/Gangplank/Temp/Burst
+--temp-folder=/Users/kd/Documents/GitHub/Gangplank/Temp/Burst
 --debug=Full
 --key-folder=/Applications/Unity/Hub/Editor/2022.3.23f1/PlaybackEngines/AndroidPlayer
 --decode-folder=/Users/sbjhomeimac/Documents/GitHub/Gangplank/Library/Burst
@@ -176,7 +176,7 @@ Library: /Users/sbjhomeimac/Documents/GitHub/Gangplank/Temp/BurstOutput/tempburs
 --assembly-defines=Unity.XR.Oculus;
 --assembly-defines=UnityEngine;
 --generate-link-xml=Temp/burst.link.xml
---temp-folder=/Users/sbjhomeimac/Documents/GitHub/Gangplank/Temp/Burst
+--temp-folder=/Users/kd/Documents/GitHub/Gangplank/Temp/Burst
 --debug=Full
 --key-folder=/Applications/Unity/Hub/Editor/2022.3.23f1/PlaybackEngines/AndroidPlayer
 --decode-folder=/Users/sbjhomeimac/Documents/GitHub/Gangplank/Library/Burst
