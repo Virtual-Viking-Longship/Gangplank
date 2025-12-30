@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Terrain_Dist_2
-  m_Shader: {fileID: -6465566751694194690, guid: 8a02b6a935cec7f4dace6eebfbead072, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: eec2f39b39cf4ea6ac0d1c5ac5ce6496, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

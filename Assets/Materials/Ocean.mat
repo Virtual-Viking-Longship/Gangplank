@@ -29,7 +29,7 @@ Material:
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 2000
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -50,10 +50,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DirTex:
-        m_Texture: {fileID: 2800000, guid: 7c0f7ee3890e30648ae5b5babb53d6aa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -108,8 +104,8 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FadeDist: 0.16
-    - _FoamSTR: -2.7
+    - _FadeDist: 0.1
+    - _FoamSTR: 7.44
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -119,41 +115,40 @@ Material:
     - _Noise2Size: 0.18
     - _Noise2size: 0.34
     - _Noise3Size: 0.74
-    - _NormalSTR: 0.06
+    - _NormalSTR: 0.39
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SMOOTHNESS: 0.93
-    - _STR: 0.56
+    - _SMOOTHNESS: 1
+    - _STR: 23.04
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TransformSpeed: 0.24
-    - _TransformSpeed2: 0.75
+    - _TransformSpeed: 1
+    - _TransformSpeed2: 0.84
     - _TransformSpeed2_1: 0
     - _UVSec: 0
-    - _WaterScale1: 0.1
+    - _WaterScale1: 0.11
     - _WaterScale2: 0.07
-    - _WaterStr1: 1
+    - _WaterStr1: 0.31
     - _WaterStr2: 0.29
     - _ZWrite: 1
     - _scale: 0.06
     - _test: 0.03
-    - _watermul: 328.7
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorDark: {r: 0.35006526, g: 0.35539842, b: 0.3773585, a: 1}
-    - _ColorFoam: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorLight: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
+    - _ColorDark: {r: 0.05490197, g: 0.12314972, b: 0.39607844, a: 0}
+    - _ColorFoam: {r: 1, g: 1, b: 1, a: 0}
+    - _ColorLight: {r: 0.7012578, g: 0.8008386, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamScale: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _FoamSpeed: {r: 1, g: 1, b: 0, a: 0}
     - _Noise1Speed: {r: 0, g: -1, b: 0, a: 0}
     - _Noise2Speed: {r: -1, g: -1, b: 0, a: 0}
     - _Noise3Speed: {r: 0, g: 1, b: 0, a: 0}
-    - _WaterSpeed1: {r: 1, g: 10, b: 0, a: 0}
-    - _WaterSpeed2: {r: 1, g: 10, b: 0, a: 0}
+    - _WaterSpeed1: {r: 0.001, g: 0.5, b: 0, a: 0}
+    - _WaterSpeed2: {r: 0.5, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4168565242243173400
 MonoBehaviour:

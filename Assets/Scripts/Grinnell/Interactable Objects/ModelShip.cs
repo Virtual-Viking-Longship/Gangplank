@@ -9,6 +9,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine.XR.Interaction.Toolkit;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Oculus.Interaction;
 
 /*
 This is the code for the model ship
@@ -28,6 +29,8 @@ public class ModelShip : MonoBehaviour
     private Material previousMaterial;
     private int selectedPiece = -1;
     List<Transform> shipPieces;
+    public GameObject InfoPanel;
+    public Transform target = null;
 
     private int currentPieceIndex = -1;
     bool[] piecesBuildStatus;
@@ -60,7 +63,7 @@ public class ModelShip : MonoBehaviour
     public void SpawnPiece()
     {
         currentPieceIndex++;
-        if(currentPieceIndex >= shipPieces.Count) return;
+        if (currentPieceIndex >= shipPieces.Count) return;
 
         Transform currentPiece = shipPieces[currentPieceIndex];
         currentPiece.gameObject.SetActive(true);
@@ -68,15 +71,17 @@ public class ModelShip : MonoBehaviour
         currentPiece.GetComponent<MeshRenderer>().material = highlihtedMaterial;
 
         GameObject shipPiece = Instantiate(shipPiecePrefab, shipPieceSpawnPoint.position, currentPiece.rotation * Quaternion.Euler(0, 90, 0));
-        shipPiece.transform.localScale = new Vector3(currentPiece.localScale.x * transform.localScale.x, 
-                                                        currentPiece.localScale.y * transform.localScale.y, 
+        shipPiece.transform.localScale = new Vector3(currentPiece.localScale.x * transform.localScale.x,
+                                                        currentPiece.localScale.y * transform.localScale.y,
                                                         currentPiece.localScale.z * transform.localScale.z);
         shipPiece.name = currentPiece.name;
         shipPiece.GetComponent<MeshFilter>().mesh = currentPiece.GetComponent<MeshFilter>().mesh;
         shipPiece.GetComponent<MeshCollider>().sharedMesh = shipPiece.GetComponent<MeshFilter>().mesh;
+        shipPiece.GetComponent<ObjectInspector>().infoPanel = InfoPanel;
+        shipPiece.GetComponent<ObjectInspector>().target = target;
 
         // Hooks up to events to when the player picks up the piece and when they place the piece in the model ship
-        shipPiece.GetComponent<XRGrabInteractable>().selectEntered.AddListener(delegate{PlayerPickedUp(shipPiece.name);});
+        shipPiece.GetComponent<InteractableUnityEventWrapper>().WhenSelect.AddListener(delegate{PlayerPickedUp(shipPiece.name);});
         shipPiece.GetComponent<Placeable>().onPlace.AddListener(delegate{PlacePieces(currentPieceIndex, currentPiece);});
     }
 
@@ -139,7 +144,7 @@ public class ModelShip : MonoBehaviour
             foreach(MeshRenderer mr in child.GetComponentsInChildren<MeshRenderer>()) mr.material.SetColor("_BaseColor", new Color(0, 1, 0, 1));
             child.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", new Color(0, 1, 0, 1));
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
 
             foreach(MeshRenderer mr in child.GetComponentsInChildren<MeshRenderer>()) mr.material.SetColor("_BaseColor", pieceColor);
             currentChild.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", pieceColor);
@@ -152,8 +157,8 @@ public class ModelShip : MonoBehaviour
     // Note that when playing sounds that are expected to repeat a lot you shold randomize the pitch
     private void PlayPlacePieceSound()
     {
-        GetComponent<AudioSource>().pitch = 1 + Random.Range(-0.2f, 0.2f);
-        GetComponent<AudioSource>().Play();
+        GetComponentInChildren<AudioSource>().pitch = 1 + Random.Range(-0.2f, 0.2f);
+        GetComponentInChildren<AudioSource>().Play();
     }
 
     void PrintData(string pieceName, float startTime, Vector3 pieceStartPos, Vector3 pieceEndPos)

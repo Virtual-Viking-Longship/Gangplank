@@ -9,6 +9,8 @@ TagManager:
   - Ship Piece
   - Anchor
   - Floor
+  - InfoPanel
+  - Oar
   layers:
   - Default
   - TransparentFX
