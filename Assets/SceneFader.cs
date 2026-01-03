@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SceneFader : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class SceneFader : MonoBehaviour
         FadeComplete();
     }
 
-    public void FadeScene (int Index)
+    public void FadeScene(int Index)
     {
         animator.SetTrigger("Fade Out");
         destination = Index;
@@ -32,41 +33,63 @@ public class SceneFader : MonoBehaviour
             SceneManager.UnloadSceneAsync(scenename);
         }
     }
+
+    IEnumerator Loader()
+    {
+        if (destination == 4)
+        {
+            yield return SceneManager.LoadSceneAsync("Hedeby-World", LoadSceneMode.Additive);
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Hedeby-World"));
+        }
+        else
+        {
+            yield return SceneManager.LoadSceneAsync("World-Environment", LoadSceneMode.Additive);
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("World-Environment"));
+        }
+    }
+    private void HelpMainLoad(string scenename)
+    {
+        scene = SceneManager.GetSceneByName(scenename);
+        if (!scene.isLoaded)
+        {
+            StartCoroutine(Loader());
+        }
+    }
     public void FadeComplete()
     {
-        
+
         GameObject player = GameObject.FindWithTag("Player");
         if (destination == 0)  // Ship Building
         {
-            HelpLoad("World-Environment", true);
+            HelpMainLoad("World-Environment");
             HelpLoad("1 to 10 Ship Building", true);
             HelpLoad("Ship-With-Annotations", false);
             HelpLoad("Rowing-Game", false);
             HelpLoad("Hedeby-Game", false);
             HelpLoad("Hedeby-World", false);
         }
-        if (destination == 1) //Back of Ship Annotations
+        else if (destination == 1) //Back of Ship Annotations
         {
-            HelpLoad("World-Environment", true);
+            HelpMainLoad("World-Environment");
             HelpLoad("1 to 10 Ship Building", false);
             HelpLoad("Ship-With-Annotations", true);
             HelpLoad("Rowing-Game", false);
             HelpLoad("Hedeby-Game", false);
             HelpLoad("Hedeby-World", false);
         }
-        if (destination == 2) // Front of Ship Annotations
+        else if (destination == 2) // Front of Ship Annotations
         {
-            HelpLoad("World-Environment", true);
+            HelpMainLoad("World-Environment");
             HelpLoad("1 to 10 Ship Building", false);
             HelpLoad("Ship-With-Annotations", true);
             HelpLoad("Rowing-Game", false);
             HelpLoad("Hedeby-Game", false);
             HelpLoad("Hedeby-World", false);
-            player.transform.SetPositionAndRotation(new Vector3(-15, 0, 7), new Quaternion(0, 0, 0, 90));
+            player.transform.SetPositionAndRotation(new Vector3(-15, .35f, 7), new Quaternion(0, 0, 0, 90));
         }
-        if (destination == 3) // Rowing Game
+        else if (destination == 3) // Rowing Game
         {
-            HelpLoad("World-Environment", true);
+            HelpMainLoad("World-Environment");
             HelpLoad("1 to 10 Ship Building", false);
             HelpLoad("Ship-With-Annotations", true);
             HelpLoad("Rowing-Game", true);
@@ -74,15 +97,15 @@ public class SceneFader : MonoBehaviour
             HelpLoad("Hedeby-World", false);
             player.transform.SetPositionAndRotation(new Vector3(-15.83f, 0.3f, 7.071f), new Quaternion(0, 0, 0, 0));
         }
-        if (destination == 4) // Hedeby Chest
+        else if (destination == 4) // Hedeby Chest
         {
             HelpLoad("World-Environment", false);
             HelpLoad("1 to 10 Ship Building", false);
             HelpLoad("Ship-With-Annotations", false);
             HelpLoad("Rowing-Game", false);
             HelpLoad("Hedeby-Game", true);
-            HelpLoad("Hedeby-World", true);
-            player.transform.SetPositionAndRotation(new Vector3(1.123f, 1.95f, -12.234f), new Quaternion(0, 180, 0, 0));
+            HelpMainLoad("Hedeby-World");
+            player.transform.SetPositionAndRotation(new Vector3(1.123f, 2.05f, -12.234f), new Quaternion(0, 180, 0, 0));
         }
         animator.SetTrigger("Fade In");
     }
